@@ -1,5 +1,12 @@
 # Demo
 
+🎥: https://youtu.be/KiuLUeu5r5M
+
+
+https://github.com/user-attachments/assets/d4476a51-5159-485e-a3ad-e43973c25934
+
+
+
 ## Installation
 ```bash
 git clone https://github.com/justinyeh1995/django-nextjs-apartment-app.git

@@ -56,3 +56,12 @@ A webpage should be accessible on `localhost:3000`
 docker-compose build -t demo-full-stack
 docker-compose up
 ```
+
+---
+
+References:
+
+1. https://docs.djangoproject.com/en/5.0/
+2. https://dev.to/koladev/building-a-fullstack-application-with-django-django-rest-nextjs-3e26
+3. https://www.django-rest-framework.org/#example
+4. https://testdriven.io/blog/dockerizing-django-with-postgres-gunicorn-and-nginx/

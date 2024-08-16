@@ -12,7 +12,7 @@ const API_BASE_URL = 'http://localhost:8000/v1/apartment/';
 const ApartmentManagement = () => {
   const [apartments, setApartments] = useState<Apartment[]>([]);
   const [displayedApartments, setDisplayedApartments] = useState<Apartment[]>([]);
-
+  const [filteredApartments, setFilteredApartments] = useState<Apartment[]>([])
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const [searchTerm, setSearchTerm] = useState('');
@@ -29,6 +29,7 @@ const ApartmentManagement = () => {
       }
       const data = await response.json();
       setApartments(data);
+      setTotalPages(Math.ceil(data.length / itemsPerPage));
     } catch (error) {
       console.error('Error fetching apartments:', error);
     } finally {
@@ -56,13 +57,13 @@ const ApartmentManagement = () => {
     setFilteredApartments(filtered);
   }, [searchTerm, apartments]);
 
-  useEffect(() => {
-    const startIndex = (currentPage - 1) * itemsPerPage;
-    const endIndex = startIndex + itemsPerPage;
-    setDisplayedApartments(filteredApartments.slice(startIndex, endIndex));
-    setCurrentPage(filteredApartments.length > 0 ? 1 : currentPage);
-    // setTotalPages(filteredApartments.length > 0 ? filteredApartments.length / itemsPerPage : 1);
-  }, [filteredApartments, currentPage]);
+  // useEffect(() => {
+  //   const startIndex = (currentPage - 1) * itemsPerPage;
+  //   const endIndex = startIndex + itemsPerPage;
+  //   setDisplayedApartments(filteredApartments.slice(startIndex, endIndex));
+  //   setCurrentPage(filteredApartments.length > 0 ? 1 : currentPage);
+  //   setTotalPages(filteredApartments.length > 0 ? filteredApartments.length / itemsPerPage : 1);
+  // }, [filteredApartments, currentPage]);
   
   const handleSearch = (term: string) => {
     setSearchTerm(term);

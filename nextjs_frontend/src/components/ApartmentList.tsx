@@ -21,7 +21,7 @@ type ApartmentItemProps = {
         {isEditing ? (
           <>
             <input 
-              className="flex-grow p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="flex-grow p-2 text-cyan-900 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               type="text" 
               value={editName} 
               onChange={(e) => setEditName(e.target.value)} 

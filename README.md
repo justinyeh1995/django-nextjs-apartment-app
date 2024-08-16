@@ -31,7 +31,7 @@ source demo-venv/bin/activate
 cd django-nextjs-apartment-app/django_backend
 python3 -m pip install -r requirements.txt
 
-python3 manage.py makemigration
+python3 manage.py makemigrations
 python3 manage.py migrate
 
 python3 manage.py runserver 0.0.0.0:8000

@@ -42,7 +42,7 @@ A webpage should be accessible on `localhost:3000`
 
 ---
 
-## Build and Run with Docker Compose
+## Build and Run with Docker Compose (Under Development)
 
 ```bash
 docker-compose build -t demo-full-stack

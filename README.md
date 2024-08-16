@@ -14,6 +14,14 @@ cd django-nextjs-apartment-app
 In this demo, the default database engine is PostgreSQL, so it is required to download it either as a binary or a docker container.
 It is important to expose `5432`, so Django backend can access it.
 
+Once your `PostgreSQL` server is running
+
+```bash
+psql -U postgres
+CREATE DATABASE apartment_db
+exit
+``` 
+
 ### Django Backend
 
 ```bash

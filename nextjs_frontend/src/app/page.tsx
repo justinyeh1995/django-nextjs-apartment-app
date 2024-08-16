@@ -1,5 +1,5 @@
 import Image from "next/image";
-import ApartmentManagement from "@/components/testContainer";
+import ApartmentManagement from "@/components/MainContainer";
 
 export default function Home() {
   return (

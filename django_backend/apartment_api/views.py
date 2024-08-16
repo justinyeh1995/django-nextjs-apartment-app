@@ -1,10 +1,10 @@
-from .models import Apartment
 from rest_framework import viewsets
-from apartment_api.serializers import ApartmentSerializer
-from rest_framework.permissions import AllowAny
+from .serializers import ApartmentSerializer
+from .models import Apartment
 # Create your views here.
 
-class ApartmentViewSet(viewsets.ViewSet):
+class ApartmentViewSet(viewsets.ModelViewSet):
     queryset = Apartment.objects.all()
     serializer_class = ApartmentSerializer
-    permission_classes = [AllowAny] # allow any user to access the api at this point
+    http_method_names = ['get', 'post', 'put', 'patch', 'delete']
+    # permission_classes = [AllowAny] # allow any user to access the api at this point

@@ -49,6 +49,21 @@ const ApartmentManagement = () => {
     setDisplayedApartments(filteredApartments.slice(startIndex, endIndex));
   }, [apartments, currentPage, searchTerm]);
 
+  useEffect(() => {
+    const filtered = apartments.filter(apt =>
+      apt.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    setFilteredApartments(filtered);
+  }, [searchTerm, apartments]);
+
+  useEffect(() => {
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    setDisplayedApartments(filteredApartments.slice(startIndex, endIndex));
+    setCurrentPage(filteredApartments.length > 0 ? 1 : currentPage);
+    // setTotalPages(filteredApartments.length > 0 ? filteredApartments.length / itemsPerPage : 1);
+  }, [filteredApartments, currentPage]);
+  
   const handleSearch = (term: string) => {
     setSearchTerm(term);
   };

@@ -7,7 +7,7 @@ cd django-nextjs-apartment-app
 ```
 ---
 
-## Build locally
+## Getting Started
 
 ### Database
 
